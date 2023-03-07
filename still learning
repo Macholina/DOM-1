@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">JAVASCRIPT QUOTE GENERATOR</div>
+
+    <div class="quote-tag">
+        <div class="quote">"The Journey of a thousand miles begins with one step"</div>
+        <div class="person">Lao Tzu</div>
+        <button class="btn">NEW QUOTE</button>
+    </div>
+<style>
+body{
+   text-align: center;
+   background-color: aquamarine; 
+}
+
+
+.header{
+    margin-left: 500px;
+    padding-top: 20px;
+    height: 70px;
+    width: 300px;
+    border: 1px solid #fff;
+    background-color: blueviolet;
+    border-radius: 10px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.quote-tag{
+    padding: 30px;
+    line-height: 1.5;
+    margin-left: 420px;
+    height: 150px;
+    width: 400px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.person{
+    text-transform: uppercase;
+    color: red;
+    font-size: 1.3rem;
+}
+
+.btn{
+    border: none;
+    font-size: 1.2rem;
+    background-color: black;
+    color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    line-height: 2;
+}
+
+.btn:active{
+    background-color: lightblue;
+}
+</style>
+
+<script>
+let person = document.querySelector(".person");
+let quote = document.querySelector(".quote");
+let btn = document.querySelector(".btn");
+
+const quotes = [{
+    quote: `Tell me and I forget teach me and I remember, involve me and I learn`,
+    person: `Benjamin Franklin`,
+},{
+    quote: `It does not matter how slowly you go as long as you do not stop`,
+    person: `Conficus`,
+},{
+    quote: `Our lives begin to end the day that we decide to become silent about things that matter`,
+    person: `Martin Luther King, Jr.`
+},
+];
+
+
+btn.addEventListener("click", function () {
+    let random = Math.floor(Math.random() * quotes.length);
+    person.innerText = quotes[random].person;
+    quote.innerText = quotes[random].quote;
+});
+
+
+</script>
+</body>
+</html>
